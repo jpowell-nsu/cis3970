@@ -1,6 +1,6 @@
-package factories;
+package creators;
 
-import notifications.Notification;
+import products.Notification;
 
 public abstract class NotificationFactory {
 	

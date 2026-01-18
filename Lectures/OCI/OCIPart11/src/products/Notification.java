@@ -1,4 +1,4 @@
-package notifications;
+package products;
 
 // our products are different types of notifications
 // but all notifications must have a send method

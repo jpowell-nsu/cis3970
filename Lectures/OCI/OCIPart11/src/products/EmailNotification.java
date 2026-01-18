@@ -1,4 +1,4 @@
-package notifications;
+package products;
 
 // concrete product email notification
 public class EmailNotification implements Notification {

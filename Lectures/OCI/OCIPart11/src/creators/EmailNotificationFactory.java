@@ -1,7 +1,7 @@
-package factories;
+package creators;
 
-import notifications.EmailNotification;
-import notifications.Notification;
+import products.EmailNotification;
+import products.Notification;
 
 public class EmailNotificationFactory extends NotificationFactory {
 

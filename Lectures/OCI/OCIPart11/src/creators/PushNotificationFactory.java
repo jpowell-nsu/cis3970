@@ -1,7 +1,7 @@
-package factories;
+package creators;
 
-import notifications.Notification;
-import notifications.PushNotification;
+import products.Notification;
+import products.PushNotification;
 
 public class PushNotificationFactory extends NotificationFactory {
 

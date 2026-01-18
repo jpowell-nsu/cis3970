@@ -1,4 +1,4 @@
-package notifications;
+package products;
 
 // concrete product SMS notification
 public class SmsNotification implements Notification {

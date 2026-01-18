@@ -1,9 +1,9 @@
-package driver;
+package application;
 
-import factories.EmailNotificationFactory;
-import factories.NotificationFactory;
-import factories.PushNotificationFactory;
-import factories.SmsNotificationFactory;
+import creators.EmailNotificationFactory;
+import creators.NotificationFactory;
+import creators.PushNotificationFactory;
+import creators.SmsNotificationFactory;
 
 public class Driver {
 	

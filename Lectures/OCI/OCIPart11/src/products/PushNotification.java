@@ -1,4 +1,4 @@
-package notifications;
+package products;
 
 // concrete product push notification
 public class PushNotification implements Notification {
