@@ -1,7 +1,7 @@
 package notifications;
 
 // concrete product email notification
-public class EmailNotification implements Notification {
+public class Email implements Notification {
 
 	@Override
 	public void send(String message) {

@@ -1,7 +1,7 @@
 package notifications;
 
 // concrete product SMS notification
-public class SmsNotification implements Notification {
+public class Sms implements Notification {
 
 	@Override
 	public void send(String message) {

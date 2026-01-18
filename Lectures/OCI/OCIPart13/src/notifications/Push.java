@@ -1,7 +1,7 @@
 package notifications;
 
 // concrete product push notification
-public class PushNotification implements Notification {
+public class Push implements Notification {
 
 	@Override
 	public void send(String message) {
