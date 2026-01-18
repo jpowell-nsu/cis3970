@@ -74,10 +74,10 @@ public class Car implements Cloneable, Comparable<Car> {
 		return cloned;
 	}
 
-	/*
+
 	@Override
 	public int compareTo(Car o) {
-		/*
+
 		if (o == null || this.VIN.vin > o.VIN.vin) {
 			return 1;
 		} else if (this.VIN.vin < o.VIN.vin) {
@@ -85,14 +85,15 @@ public class Car implements Cloneable, Comparable<Car> {
 		} else {
 			return 0;
 		}
-
+/*
 		if (o != null) {
 			return this.VIN.vin-o.VIN.vin;
 		}
 		return 1;
-	}
 */
-	
+	}
+
+	/*
 	@Override
 	public int compareTo(Car o) {
 		if (o != null) {
@@ -108,5 +109,5 @@ public class Car implements Cloneable, Comparable<Car> {
 		}
 		return 1;
 	}
-
+*/
 }

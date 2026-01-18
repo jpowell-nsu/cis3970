@@ -68,11 +68,25 @@ public class Car implements Cloneable {
 		// note: We must implement Cloneable to get the proper setup for cloning
 		 
 		// shallow copy
-		
 		Object cloned = super.clone();
 		
 		return cloned;
 	}
+
+	/*
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		// note: We must implement Cloneable to get the proper setup for cloning
+		 
+		// shallow copy
+		Object cloned = super.clone();
+		// deep copy
+		Car clonedcar = (Car) cloned;
+		clonedcar.VIN = new Vin(this.getVin());
+		
+		return clonedcar;
+	}	
+	 */
 	
 	/*
 	// Covariant - different return type
@@ -82,8 +96,8 @@ public class Car implements Cloneable {
 		
 		return cloned;
 	}
+		
 	*/
-	
 	/*
 	// Covariant - different return type
 	public Car clone() throws CloneNotSupportedException {
@@ -96,4 +110,5 @@ public class Car implements Cloneable {
 		return cloned;
 	}
 	*/
+	
 }

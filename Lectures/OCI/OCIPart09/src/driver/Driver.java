@@ -38,7 +38,7 @@ public class Driver {
 		}
 		System.out.println("----------------");
 		
-		ArrayList<Car> clonedcars = new ArrayList<>();
+		ArrayList<Car> clonedcars;
 		clonedcars = (ArrayList<Car>) cars.clone();
 		for (Car car : clonedcars) {
 			System.out.printf("car=%10s, vin=%10s\n",

@@ -1,6 +1,8 @@
 package driver;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 import vehicles.Car;
 
 public class Driver {
@@ -25,6 +27,7 @@ public class Driver {
 		//cars.add(null);
 		
 		System.out.println(car5.compareTo(car3));
+		System.out.println(car3.compareTo(car5));
 		System.out.println(car5.compareTo(null));
 		
 		System.out.println(cars);
