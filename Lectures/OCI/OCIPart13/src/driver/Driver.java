@@ -2,7 +2,7 @@ package driver;
 
 import alertsystem.Alert;
 import alertsystem.AlertService;
-import factories.NotificationChannel;
+import notifications.Channel;
 import users.User;
 
 public class Driver {
@@ -11,9 +11,9 @@ public class Driver {
 		// we offer the customers an alert service
 		AlertService alertService = new AlertService();
 		
-		// here are some of our users
-		User user1 = new User(NotificationChannel.EMAIL);
-		User user2 = new User(NotificationChannel.PUSH);
+		// here are some of our users and their preferred channel
+		User user1 = new User(Channel.EMAIL);
+		User user2 = new User(Channel.PUSH);
 		
 		// imagine having a client program connects and needs to send an alert
 		// and these are some of the alerts received from that client program
@@ -28,6 +28,8 @@ public class Driver {
         alertService.sendAlert(user1, alert2);
         System.out.println();
         alertService.sendAlert(user2, alert2);
+        
+        // this application has no need to know anything about the types of notification
         
         // challenge: Add a new type of notification: SlackNotification
 	}

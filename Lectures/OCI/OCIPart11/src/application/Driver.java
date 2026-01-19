@@ -8,6 +8,7 @@ public class Driver {
 	public static void main(String[] args) throws CloneNotSupportedException {
 		Creator factory;
 
+		// the application code has no idea of what type of product it is using
 		factory = new ConcreteCreator();
 		factory.AnOperation("Something,");
 		factory.AnOperation("Something,");

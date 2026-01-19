@@ -1,9 +1,9 @@
 package application;
 
-import creators.EmailNotificationFactory;
-import creators.NotificationFactory;
-import creators.PushNotificationFactory;
-import creators.SmsNotificationFactory;
+import factories.EmailNotificationFactory;
+import factories.NotificationFactory;
+import factories.PushNotificationFactory;
+import factories.SmsNotificationFactory;
 
 public class Driver {
 	
@@ -28,7 +28,8 @@ public class Driver {
 		//		Notification
 		//		NotificationFactory
 		//		ExistingFactories
-		//		Client code logic (this Driver did not demonstrate this concept)
+		//		business logic for the product--it is in the factory
+		//		The application (Driver) may need to be adjusted by having new factories
 		
 		// why this is good
 		//		creation logic is centralized

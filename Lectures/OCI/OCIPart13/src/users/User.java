@@ -1,16 +1,16 @@
 package users;
 
-import factories.NotificationChannel;
+import notifications.Channel;
 
 public class User {
 	
-	private NotificationChannel preferredChannel;
+	private Channel preferredChannel;
 	
-	public User(NotificationChannel preferredChannel) {
+	public User(Channel preferredChannel) {
 		this.preferredChannel = preferredChannel;
 	}
 	
-	public NotificationChannel getPreferredChannel() {
+	public Channel getPreferredChannel() {
 		return preferredChannel;
 	}
 }

@@ -1,4 +1,4 @@
-package creators;
+package factories;
 
 import products.Notification;
 

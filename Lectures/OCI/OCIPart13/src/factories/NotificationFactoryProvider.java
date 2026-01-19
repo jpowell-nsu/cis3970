@@ -4,6 +4,9 @@ import alertsystem.Alert;
 import users.User;
 
 public class NotificationFactoryProvider {
+	
+	// this allows the application not to know about specific types of factories
+	// it determines which type of factory, pending on the user and alert
 
 	public static NotificationFactory getFactory(User user, Alert alert) {
 		if (alert.isCritical()) {

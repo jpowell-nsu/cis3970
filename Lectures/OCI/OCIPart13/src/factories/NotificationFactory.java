@@ -17,10 +17,12 @@ public abstract class NotificationFactory {
 	}
 	
 	private void audit(String message) {
+		// business logic to review the message, check it, whatever
 		System.out.println("Auditing message: " + message);
 	}
 	
 	private void log(Notification notification) {
+		// business logic to log that the message was sent
 		System.out.println("Notification sent via "
 				+ notification.getClass().getSimpleName());
 	}
