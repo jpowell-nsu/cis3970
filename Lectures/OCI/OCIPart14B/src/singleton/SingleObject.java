@@ -3,10 +3,10 @@ package singleton;
 public class SingleObject {
 	
 	/* sometimes it is better for the loading to wait	
-	 *	the inner static class is not loaded until referenced
-	 *	it is not common to have anything else in the inner class
-	 * 	Also, by definition, class loading is thread safe
-	 *	this way has better performance
+	 * 	- the inner static class is not loaded until referenced
+	 * 	- Also, by definition, class loading is thread safe
+	 *	- this way has better performance
+	 *	- it is not common to have anything else in the inner class
 	 */
 	private static class Single {
 		private static final SingleObject instance = new SingleObject();

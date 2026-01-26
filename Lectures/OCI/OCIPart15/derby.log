@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Sat Jan 24 14:39:05 CST 2026:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019b-f1bb-5744-00003fbf1530 
-on database directory C:\Users\JPo\eclipse-cis3970\OCIPart16\myDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@105be200 
+Sun Jan 25 14:38:42 CST 2026:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019b-f6e1-5a4b-00003fbf1748 
+on database directory C:\Users\JPo\git\cis3970\Lectures\OCI\OCIPart15\myDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@105be200 
 Loaded from file:/C:/Program%20Files/Java/externallibs/db-derby-10.17.1.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=25.0.1+8-LTS-27
-user.dir=C:\Users\JPo\eclipse-cis3970\OCIPart16
+user.dir=C:\Users\JPo\git\cis3970\Lectures\OCI\OCIPart15
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0

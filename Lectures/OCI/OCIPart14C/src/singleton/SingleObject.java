@@ -14,7 +14,7 @@ public class SingleObject {
 	private SingleObject() {}
 	
 	/* Honestly, I still have a hard time imagining why it would
-	 * 	ever be done this way. The further past reference I found was
+	 * 	ever be done this way. The farthest past reference I found was
 	 *	that it does not work before Java 5. I think it must have been
 	 *	a change in Java optimization and memory management
 	 */

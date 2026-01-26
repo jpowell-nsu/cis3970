@@ -24,6 +24,8 @@ public class SingleObject {
 	 *	is already created. We'll talk more about threads later this
 	 * 	semester. Part B of this lecture tackles how to do this better
 	 */
+	//public static synchronized SingleObject getInstance() {
+	
 	public static SingleObject getInstance() {
 		if (instance == null) {
 			instance = new SingleObject();

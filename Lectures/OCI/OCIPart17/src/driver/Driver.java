@@ -22,7 +22,7 @@ public class Driver {
 		 *		and makes it effectively final
 		 *	when lambdas do not work, we'll see lambdas in another lecture 
 		 */
-	
+		
 		Greeter greeter = new Greeter() {
 			@Override
 			public void greet() {
@@ -46,16 +46,28 @@ public class Driver {
 		});
 		
 		int value = 5;
-		
+		int another = 10;
+	/*	
 		System.out.println(new Function() {
 			@Override
 			public int f() {
 				return value*value + 3*value - 3;
 			}
 		}.f());
-		
+		*/
+		/*
+		System.out.println(new Function() {
+			@Override
+			public int f(int x) {
+				return value*value + 3*value - 3 + x;
+			}
+		}.f(another));
+		 */
+		/*
 		// notice we cannot use value outside the anonymous class now
-		//value++;
+		value++;
+		another++;
+		*/
 		
 		int y = 10;
 		System.out.println(new Function() {

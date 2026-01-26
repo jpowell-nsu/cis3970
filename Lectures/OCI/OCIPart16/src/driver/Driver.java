@@ -8,14 +8,16 @@ import records.Person;
 public class Driver {
 	
 	public static void main(String[] args) {
-		Coordinate pointA = new Coordinate(1, 1);
-		Coordinate pointB = new Coordinate(1, 1);
+		Coordinate pointA = new Coordinate(1, 2);
+		Coordinate pointB = new Coordinate(1, 2);
 		
+		//pointA.
 		System.out.println(pointA);
 		System.out.println(pointA.x());
 		System.out.println(pointA.y());
 		System.out.println(pointA.getClass());
 		
+		System.out.println(pointA == pointB);
 		System.out.println(pointA.equals(pointB));
 		
 		System.out.println(pointA.hashCode());
@@ -31,10 +33,8 @@ public class Driver {
 		 * leading to many opportunities for shared birthdays.
 		 */
 		
-		System.out.println(pointA.equals(pointB));
-		
-		Person p1 = new Person("Jason", 42);
-		Person p2 = new Person("Jason", 42);
+		Person p1 = new Person("Jason", 42, pointA);
+		Person p2 = new Person("Jason", 42, pointB);
 		
 		System.out.println(p1);
 		System.out.println(p2);
@@ -44,14 +44,16 @@ public class Driver {
 		System.out.println(p1.hashCode());
 		System.out.println(p2.hashCode());
 		
+			
 		Scanner scnr = new Scanner(System.in);
 		System.out.print("Enter name: ");
 		String name = scnr.next();
 		
-		Person p3 = new Person(name, 42);
+		Person p3 = new Person(name, 42, pointA);
 		System.out.println(p1.equals(p3));
 
 		scnr.close();
+		
 	}
 
 }

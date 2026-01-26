@@ -16,7 +16,7 @@ public class DBConnectionManager {
 		try {
 			String url = "jdbc:derby:myDB;create=true";
             connection = DriverManager.getConnection(url);
-            System.out.println("Connections successful");
+            System.out.println("Connection successful");
 		} catch (SQLException e) {
 			throw new RuntimeException("Failed to connect", e);
 		}
