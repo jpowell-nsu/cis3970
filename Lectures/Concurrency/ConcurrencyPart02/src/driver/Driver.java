@@ -7,6 +7,7 @@ public class Driver {
 
 	public static void main(String[] args) throws InterruptedException {
 		int cpus = Runtime.getRuntime().availableProcessors();
+		//Runtime.getRuntime().
 		System.out.printf("Number of Processors = %d\n", cpus);
 		System.out.printf("MIN  Priority = %d\n", Thread.MIN_PRIORITY);
 		System.out.printf("NORM Priority = %d\n", Thread.NORM_PRIORITY);
@@ -14,13 +15,13 @@ public class Driver {
 		
 		ProcessorThread p1 = new ProcessorThread(1);
 		ProcessorThread p2 = new ProcessorThread(2);
-		System.out.println(p1);
+		System.out.println(p1.toString());
 		System.out.println(p2);
 		System.out.println(p1.getState());
-	/*	
+	
 		p1.start();
 		p2.start();
-		
+	
 		ProcessorRunnable p3 = new ProcessorRunnable(3);
 		ProcessorRunnable p4 = new ProcessorRunnable(4);
 		Thread thread3 = new Thread(p3);
@@ -29,7 +30,13 @@ public class Driver {
 		thread4.start();
 		System.out.println(thread3);
 		System.out.println(thread4);
+
+		while (true) {
+			System.out.printf("ID=%d printing\n", 0);
+			Thread.sleep(1000);
+		}
 		
+/*		
 		new ProcessorThread(5).run();
 		
 		Thread thread6 = new Thread(new ProcessorRunnable(6));
@@ -56,10 +63,7 @@ public class Driver {
 			}
 		}.start();
 */		
-		while (true) {
-			System.out.printf("ID=%d printing\n", 0);
-			Thread.sleep(1000);
-		}
+
 
 	}
 
