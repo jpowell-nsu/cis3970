@@ -1,10 +1,10 @@
 package processes;
 
-public class Processor2 implements Runnable {
+public class ProcessorRunnable implements Runnable {
 	
 	private int ID;
 	
-	public Processor2(int ID) {
+	public ProcessorRunnable(int ID) {
 		this.ID = ID;
 	}
 	

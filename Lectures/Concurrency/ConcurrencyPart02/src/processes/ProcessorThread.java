@@ -1,10 +1,10 @@
 package processes;
 
-public class Processor1 extends Thread {
+public class ProcessorThread extends Thread {
 	
 	private int ID;
 	
-	public Processor1(int ID) {
+	public ProcessorThread(int ID) {
 		this.ID = ID;
 	}
 	
