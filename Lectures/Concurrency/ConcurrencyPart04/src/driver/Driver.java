@@ -5,16 +5,17 @@ import processors.PrimeCounter;
 public class Driver {
 
 	public static void main(String[] args) throws InterruptedException {
-		PrimeCounter pc1 = new PrimeCounter(1, 50000000);
-		PrimeCounter pc2 = new PrimeCounter(1, 50000000);
-		PrimeCounter pc3 = new PrimeCounter(1, 50000000);
-		PrimeCounter pc4 = new PrimeCounter(1, 50000000);
+
+		PrimeCounter pc1 = new PrimeCounter(1, 100_000_000);
+		PrimeCounter pc2 = new PrimeCounter(1, 100_000_000);
+		PrimeCounter pc3 = new PrimeCounter(1, 100_000_000);
+		PrimeCounter pc4 = new PrimeCounter(1, 100_000_000);
 		
-		pc1.setPriority(10);
-		pc2.setPriority(10);
-		pc3.setPriority(10);
-		pc4.setPriority(1);
-		
+		pc1.setPriority(1);
+		pc2.setPriority(1);
+		pc3.setPriority(1);
+		pc4.setPriority(10);
+
 		pc1.start();
 		pc2.start();
 		pc3.start();
@@ -29,7 +30,7 @@ public class Driver {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	
+
 		System.out.println(pc1 + " " +  pc1.getTime());
 		System.out.println(pc2 + " " +  pc2.getTime());
 		System.out.println(pc3 + " " +  pc3.getTime());
@@ -41,18 +42,25 @@ public class Driver {
 									+ pc4.getCount()));
 		System.out.println("Threads are done.");			
 
-		PrimeCounter[] pool = new PrimeCounter[5];
+		/*
+		PrimeCounter[] pool = new PrimeCounter[30];
 		for (int i = 0; i < pool.length; i++) {
-			pool[i] = new PrimeCounter(1, 50000000);
-			pool[i].start();
-
-			//(pool[i] = new PrimeCounter(1, 50000000)).start();
+			pool[i] = new PrimeCounter(1, 100_000_000);
+			//pool[i].setPriority(1);
+			//(pool[i] = new PrimeCounter(1, 90_000_000)).start();
 		}
+		
+		pool[4].setPriority(10);
+
+		for (int i = 0; i < pool.length; i++) {
+			pool[i].start();
+		}		
 
 		for (PrimeCounter pc : pool) {
 			pc.join();
 			System.out.println(pc + " " +  pc.getTime());
 		}
+		*/
 	}
 
 }

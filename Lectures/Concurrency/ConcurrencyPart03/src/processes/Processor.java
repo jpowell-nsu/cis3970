@@ -9,9 +9,9 @@ public class Processor implements Runnable {
 	}
 	
 	@Override
-	public void run() {	// note: you cannot throw anything outside of run
+	public void run() {
 		System.out.printf("%s ID=%d started, State=%s\n", 
-				Thread.currentThread().toString(), 	// we have to use the Thread class to get the info now
+				Thread.currentThread().toString(),
 				ID, 
 				Thread.currentThread().getState());
 		try {
@@ -22,12 +22,12 @@ public class Processor implements Runnable {
 	}
 	
 	private void looper() throws InterruptedException {
-		while (true) {		// infinite loop -- BAD PROGRAMMING!!! lol
+		while (true) {	// infinite loop -- BAD PROGRAMMING!!! lol
 			System.out.printf("%s ID=%d printing, State=%s\n", 
 					Thread.currentThread().toString(), 
 					ID, 
 					Thread.currentThread().getState());
-			Thread.sleep(1000); 	// sleep thread for 1 second
+			Thread.sleep(1000);	// sleep thread for 1 second
 		}
 	}
 

@@ -23,11 +23,11 @@ public class Driver {
 		System.out.println(thread1);
 		System.out.println(thread2);
 
-		Thread thread6 = new Thread(new Processor(3));
-		thread6.start();
-		
+		Thread thread3 = new Thread(new Processor(3));
+		thread3.start();
+				
 		new Thread(new Processor(4)).start();
-
+		
 		int ID = 5;
 		new Thread() {
 			@Override
@@ -42,8 +42,6 @@ public class Driver {
 				}
 			}
 		}.start();
-		
-		// notice that main is finished, but the threads keep going
 
 	}
 
