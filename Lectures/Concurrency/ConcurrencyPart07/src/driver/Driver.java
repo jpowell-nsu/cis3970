@@ -1,83 +1,53 @@
 package driver;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
-import processors.PrimeCounter;
+import race.RaceTrack;
+import race.RaceTrack.Flag;
+import race.Racer;
 
 public class Driver {
-
-	public static void main(String[] args) throws InterruptedException {
-		// for asynchronous concurrent tasks
-		
-		PrimeCounter[] pcs = new PrimeCounter[5];
-		for (int i = 0; i < pcs.length; i++) {
-			pcs[i] = new PrimeCounter(1, 10000000);
-		}
-
-		ExecutorService executorService = Executors.newFixedThreadPool(10);
-		for (int i = 0; i < pcs.length; i++) {
-			executorService.execute(pcs[i]);
-		}
-		
-		// stops the executor server from accepting any new tasks
-		executorService.shutdown();
-		// waits for all threads to finish, or times out at 30 seconds
-		executorService.awaitTermination(30, TimeUnit.SECONDS);
-		// forces it to stop if needed
-		executorService.shutdownNow();
-		
-		long count = 0;
-		for (int i = 0; i < pcs.length; i++) {
-			System.out.println(pcs[i].getTime());
-			count += pcs[i].getCount();
-		}
-		System.out.println(count);
-		
 	
-		// creates some new object
-		for (int i = 0; i < pcs.length; i++) {
-			pcs[i] = new PrimeCounter(1, 10000000);
+	public static void main(String []args) {
+		
+		RaceTrack rt = new RaceTrack(1_000_000_000_000_000_000L);
+		Racer[] racer = new Racer[10];
+		Thread[] rthreads = new Thread[10];
+		int races = 3;
+		
+		for(int r = 0; r < races; r++) {
+			rt.reset();
+			for(int i = 0; i < rthreads.length; i++) {
+				racer[i] = new Racer(i);
+				rthreads[i] = new Thread(racer[i]);
+				rthreads[i].start();
+			
+				(rthreads[i] = new Thread(new Racer(i))).start();
+			}
+			countdown();
+			
+			for(int i = 0; i < rthreads.length; i++) {
+				try {
+					rthreads[i].join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}			
+			System.out.println("Race Done");
+			System.out.println(RaceTrack.winners);
+			
 		}
-		// virtual threads
-		executorService = Executors.newVirtualThreadPerTaskExecutor();
-		for (int i = 0; i < pcs.length; i++) {
-			executorService.execute(pcs[i]);
-		}
-		
-		executorService.shutdown();
-		executorService.awaitTermination(30, TimeUnit.SECONDS);
-		executorService.shutdownNow();
-		
-		count = 0;
-		for (int i = 0; i < pcs.length; i++) {
-			System.out.println(pcs[i].getTime());
-			count += pcs[i].getCount();
-		}
-		System.out.println(count);
-		
-		// Be careful, the executor service appears to reuse tasks objects,
-		// but it actually causes the thread to share the object
-		executorService = Executors.newVirtualThreadPerTaskExecutor();
-		for (int i = 0; i < pcs.length; i++) {
-			executorService.execute(pcs[i]);	// notice that I did not create new objects
-		}	
-		
-		for (int i = 0; i < pcs.length; i++) {
-			executorService.execute(pcs[i]);	// notice that I did not create new objects
-		}	
-		
-		executorService.shutdown();
-		executorService.awaitTermination(30, TimeUnit.SECONDS);
-		executorService.shutdownNow();
-		
-		count = 0;
-		for (int i = 0; i < pcs.length; i++) {
-			System.out.println(pcs[i].getTime());
-			count += pcs[i].getCount();
-		}
-		System.out.println(count);
 	}
-
+	
+	public static void countdown() {
+		try {
+			System.out.print("3...");
+			Thread.sleep(1000);
+			System.out.print("2...");
+			Thread.sleep(1000);
+			System.out.println("1...");
+			Thread.sleep(1000);
+			RaceTrack.flag = Flag.GO;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

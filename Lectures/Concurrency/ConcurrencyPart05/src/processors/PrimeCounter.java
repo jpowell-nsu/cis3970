@@ -1,6 +1,6 @@
 package processors;
 
-public class PrimeCounter extends Thread {
+public class PrimeCounter implements Runnable {
 	
 	private long start;
 	private long end;
