@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class HttpsTime {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
 		try {
 			// the URL constructor is deprecated
 			//URL url = new URL("https://timeapi.io/api/Time/current/zone?timeZone=UTC");
