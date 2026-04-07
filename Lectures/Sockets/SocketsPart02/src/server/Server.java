@@ -30,6 +30,7 @@ public class Server {
 			client = server.accept();
 			in = new DataInputStream(new BufferedInputStream(client.getInputStream()));
 			out = new DataOutputStream(client.getOutputStream());
+			//in.read
 		
 			message = in.readUTF();
 			System.out.println("From Client: " + message);

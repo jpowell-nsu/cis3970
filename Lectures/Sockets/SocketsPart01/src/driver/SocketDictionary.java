@@ -17,11 +17,14 @@ public class SocketDictionary {
 					new InputStreamReader(socket.getInputStream())
 			);
 			PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+			//writer.
 			
 			System.out.println("Server:" + reader.readLine());
-            
+			            
 			String word = "example";
 			writer.println("DEFINE * " + word);
+			//writer.flush();
+			
 			System.out.println("\nResponse:");
             
 			String definition = reader.readLine(); // 250 = OK, end of response

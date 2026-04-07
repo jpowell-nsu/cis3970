@@ -18,7 +18,10 @@ public class HttpsTime {
 			BufferedReader reader = new BufferedReader(
 					new InputStreamReader(url.openStream())
 			);
-
+			
+			// the buffered reader improves performance over the InputStreamReader by buffering
+			// characters, which minimizes I/O operations
+			
 			String line;
 			while ((line = reader.readLine()) != null) {
 				System.out.println(line);
