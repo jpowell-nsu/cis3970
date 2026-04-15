@@ -9,6 +9,7 @@ import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.UnrecoverableKeyException;
 import java.security.cert.CertificateException;
+import java.util.ArrayList;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -18,8 +19,9 @@ import javax.net.ssl.SSLSocket;
 
 public class Server {
 	
-	int clientcnt;	// count of connecting clients
-	int total;		// total of all their values
+	private int clientcnt;	// count of connecting clients
+	private ArrayList<Integer> values;
+	
 	
 	private ServerSocket server;
 	private SSLSocket client;
@@ -28,7 +30,7 @@ public class Server {
 	public Server(int port) {
 		this.port = port;
 		this.clientcnt = 0;
-		this.total = 0;
+		this.values = new ArrayList<>();
 	}
 	
 	public void run() {
@@ -54,12 +56,20 @@ public class Server {
 			System.out.println("Server Info: " + server.getLocalSocketAddress());
 			System.out.println("Waiting for client");
 			
-			Thread t = new Thread(
-					);
+			new Thread(() -> {
+				while(true) {
+					System.out.println(values);
+				    try {
+				        Thread.sleep(5000);
+				    } catch (InterruptedException e) {
+				        e.printStackTrace();
+				    }
+				}
+			}).start();
 		
 			while (true) {
 				client = (SSLSocket) server.accept();
-				new Thread(new Handler(client, clientcnt, total)).start();
+				new Thread(new Handler(client, clientcnt, values)).start();
 			}
 			
 		} catch (IOException e) {
